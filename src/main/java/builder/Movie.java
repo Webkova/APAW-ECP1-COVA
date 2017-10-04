@@ -1,13 +1,24 @@
-package movie_original;
+package builder;
 
 public class Movie {
+    
+    public long id;
+    public String title;
+    public int debut;
+    
+    Director director;
+    Genre genre;
+    
+    
+    public Movie(long id){
+        this.id = id;
+    }
+    
+    
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -24,16 +35,9 @@ public class Movie {
     public void setDebut(int debut) {
         this.debut = debut;
     }
-
-    public long id;
-    public String title;
-    public int debut;
-    
-    Director director;
-    Genre genre;
-    
+   
     public void setDirector(Director dir){
-        director = dir;       
+        this.director = dir;       
     }
     
     public void setGenre(Genre gen){

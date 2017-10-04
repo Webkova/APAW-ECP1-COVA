@@ -1,6 +1,10 @@
-package movie_original;
+package abstractFactory;
 
 public class Movie {
+    
+    private static Movie movie;
+    
+    public long id;
     public long getId() {
         return id;
     }
@@ -25,12 +29,19 @@ public class Movie {
         this.debut = debut;
     }
 
-    public long id;
     public String title;
     public int debut;
     
     Director director;
     Genre genre;
+    
+    private Movie(){
+        
+    }
+    
+    public static Movie getMovie(){
+        return movie;
+    }
     
     public void setDirector(Director dir){
         director = dir;       
