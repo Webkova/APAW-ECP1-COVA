@@ -4,9 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import builder.Director;
-import builder.Genre;
-import builder.Movie;
+import movie_original.Director;
+import movie_original.Genre;
+import movie_original.Movie;
 import builder.MovieBuilder;
 
 

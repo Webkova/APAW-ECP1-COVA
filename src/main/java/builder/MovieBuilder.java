@@ -1,5 +1,8 @@
 package builder;
 
+import movie_original.Director;
+import movie_original.Genre;
+import movie_original.Movie;
 
 public class MovieBuilder {
 
