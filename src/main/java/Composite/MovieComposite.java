@@ -1,22 +1,23 @@
-package movie_original;
+package Composite;
 
 import movie_original.Director;
 import movie_original.Genre;
 
-public class Movie {
+public class MovieComposite extends MovieComponent {
+    private java.util.List<MovieComponent> list;
     
-    private long id;
-    private String title;
-    private int debut;
+    public long id;
+    public String title;
+    public int debut;
     
     Director director;
     Genre genre;
-    
-    
-    public Movie(long id){
+
+    public MovieComposite(long id) {
+        this.list = new java.util.ArrayList<>();
         this.id = id;
     }
-    
+
     
     public long getId() {
         return id;
@@ -54,4 +55,26 @@ public class Movie {
     public Genre getGenre(){
         return genre;
     }
+
+    @Override
+    public String view() {
+        return this.getName();
+    }
+
+    @Override
+    public void add(MovieComponent cc) {
+        list.add(cc);
+    }
+
+    @Override
+    public void remove(MovieComponent cc) {
+        list.remove(cc);
+    }
+
+    @Override
+    public boolean isComposite() {
+        return true;
+    }
+
+
 }

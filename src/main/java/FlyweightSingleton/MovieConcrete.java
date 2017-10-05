@@ -1,18 +1,24 @@
-package abstractFactory;
+package FlyweightSingleton;
 
-public class Movie {
-    
-    private static Movie movie;
-    
-    public long id;
-    public long getId() {
-        return id;
-    }
+import movie_original.Director;
+import movie_original.Genre;
 
-    public void setId(long id) {
+public class MovieConcrete {
+    private Long id;
+    private String title;
+    private int debut;
+    
+    Director director;
+    Genre genre;
+
+    public MovieConcrete(Long id) {
         this.id = id;
     }
 
+    public Long getId() {
+        return this.id;
+    }
+   
     public String getTitle() {
         return title;
     }
@@ -28,23 +34,9 @@ public class Movie {
     public void setDebut(int debut) {
         this.debut = debut;
     }
-
-    public String title;
-    public int debut;
-    
-    Director director;
-    Genre genre;
-    
-    private Movie(){
-        
-    }
-    
-    public static Movie getMovie(){
-        return movie;
-    }
-    
+   
     public void setDirector(Director dir){
-        director = dir;       
+        this.director = dir;       
     }
     
     public void setGenre(Genre gen){

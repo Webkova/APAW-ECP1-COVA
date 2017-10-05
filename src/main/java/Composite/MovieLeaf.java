@@ -1,19 +1,19 @@
-package movie_original;
+package Composite;
 
 import movie_original.Director;
 import movie_original.Genre;
 
-public class Movie {
+public class MovieLeaf extends MovieComponent {
     
-    private long id;
-    private String title;
-    private int debut;
+    public long id;
+    public String title;
+    public int debut;
     
     Director director;
     Genre genre;
     
     
-    public Movie(long id){
+    public MovieLeaf(long id){
         this.id = id;
     }
     
@@ -53,5 +53,27 @@ public class Movie {
     
     public Genre getGenre(){
         return genre;
+    }
+
+    @Override
+    public void add(MovieComponent cc) {
+        throw new UnsupportedOperationException("Operación no soportada");
+        
+    }
+
+    @Override
+    public void remove(MovieComponent cc) {
+        //Do nothing because is a leaf
+        
+    }
+
+    @Override
+    public boolean isComposite() {
+        return false;
+    }
+    
+    @Override
+    public String view() {
+        return Long.toString(this.getId());
     }
 }
