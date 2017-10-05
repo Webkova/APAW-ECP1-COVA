@@ -14,16 +14,17 @@ public class MovieTest {
 
     @Test
     public void testMovie() {
-        Director director = new Director();
-        director.setName("Denis Villeneuve");
-
-        Movie movie = new MovieBuilder().id(1).Genre(Genre.ACTION).title("Blade runner 2049").debut(2017).Director(director)
+        
+        Movie movie = new MovieBuilder().id(1).Genre(Genre.ACTION).title("Blade runner 2049").debut(2017)
+                .Director(new Director()).DirectorName("Denis Villeneuve").DirectorLevel(45)
                 .build();
 
         assertEquals(1, movie.getId());
         assertEquals("Blade runner 2049",movie.getTitle());
         assertEquals(2017, movie.getDebut());
         assertEquals("Denis Villeneuve", movie.getDirector().getName());
+        assertEquals(1, movie.getDirector().getId());
+        assertEquals(45, movie.getDirector().getLevel());
         assertEquals(Genre.ACTION, movie.getGenre());
 
     }

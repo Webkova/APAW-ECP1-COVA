@@ -40,7 +40,16 @@ public class Movie {
     }
    
     public void setDirector(Director dir){
-        this.director = dir;       
+        this.director = dir;  
+        this.director.setId(id);
+    }
+   
+    public void setDirectorName(String directorName){
+        this.director.setName(directorName);
+    }
+    
+    public void setDirectorLevel(int directorLevel){
+        this.director.setLevel(directorLevel);
     }
     
     public void setGenre(Genre gen){

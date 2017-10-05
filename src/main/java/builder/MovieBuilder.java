@@ -29,6 +29,17 @@ public class MovieBuilder {
         return this;
     }
     
+    public MovieBuilder DirectorName(String directorName){
+        this.movie.setDirectorName(directorName);
+        return this;
+    }
+    
+    
+    public MovieBuilder DirectorLevel(int directorLevel){
+        this.movie.setDirectorLevel(directorLevel);
+        return this;
+    }
+    
    public MovieBuilder Genre(Genre gen){
        this.movie.setGenre(gen);
        return this;
