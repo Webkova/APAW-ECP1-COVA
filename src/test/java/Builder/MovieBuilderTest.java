@@ -10,7 +10,7 @@ import movie_original.Movie;
 import builder.MovieBuilder;
 
 
-public class MovieTest {
+public class MovieBuilderTest {
 
     @Test
     public void testMovie() {
