@@ -1,22 +1,23 @@
 package Composite;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import movie_original.Movie;
+
 
 public class MovieComponentTest {
-
+    
+    Movie movie1 = new Movie(1);
+    Movie movie2 = new Movie(2);
+    Movie movie3 = new Movie(3);
+    Movie movie4 = new Movie(4);
+    
     private MovieComponent root;
-
-    private MovieComponent sub1;
-
-    private MovieComponent sub11;
-
-    private MovieComponent sub12;
 
     private MovieComponent leaf;
 
@@ -25,33 +26,43 @@ public class MovieComponentTest {
 
     @Before
     public void ini() {
-        this.root = new MovieComposite(1);
+        
+        movie1.setTitle("Blade runner 2049");
+        movie2.setTitle("Star wars VIII");
+        movie3.setTitle("War for the Planet of the Apes");
+        movie4.setTitle("Alien: Covenant");
+        
+        this.root = new MovieComposite(movie1);
 
-        this.leaf = new MovieLeaf(1);
+        this.leaf = new MovieLeaf(movie2);
         this.root.add(leaf);
-        this.sub1 = new MovieComposite(1);
-        this.root.add(sub1);
-        this.root.add(new MovieLeaf(7));
+        this.root.add(new MovieLeaf(movie3));
 
-        this.sub11 = new MovieComposite(2);
-        this.sub1.add(sub11);
-        this.sub1.add(new MovieLeaf(3));
-        this.sub12 = new MovieComposite(3);
-        this.sub1.add(sub12);
 
-        this.sub11.add(new MovieLeaf(2));
-        this.sub11.add(new MovieLeaf(3));
-
-        this.sub12.add(new MovieLeaf(-5));
-        this.sub12.add(new MovieLeaf(6));
     }
 
+
+    @Test
+    public void testIDLeaf() {
+        assertEquals("2", this.leaf.view());
+    }
+    
+    @Test
+    public void testTitleComposite() {
+        assertEquals("Blade runner 2049", this.root.view());
+    }
+    
+    @Test
+    public void isComposite() {
+        assertFalse(this.leaf.isComposite());
+        assertTrue(this.root.isComposite());
+    }
     
 
     @Test
     public void testAddLeaf() {
         exception.expect(UnsupportedOperationException.class);
-//        this.leaf.add(new MovieLeaf(2));
+        this.leaf.add(new MovieLeaf(movie4));
     }
 
 }

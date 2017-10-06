@@ -1,15 +1,6 @@
 package Composite;
 
 public abstract class MovieComponent {
-//    private String name;
-//
-//    public MovieComponent(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getName() {
-//        return this.name;
-//    }
 
     public abstract void add(MovieComponent cc);
 
