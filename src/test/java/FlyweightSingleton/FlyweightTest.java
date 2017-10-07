@@ -6,7 +6,7 @@ import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
 
-import FlyweightSingleton.*;
+import flyweightSingleton.*;
 import movie_original.Director;
 
 
