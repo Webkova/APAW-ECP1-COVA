@@ -25,7 +25,7 @@ public class Factory {
         return map.get(id);
     }
     
-    //Falta el set map.set(id);
+
     public void set(long id, Movie movie){
         map.put(id, movie);
     }
