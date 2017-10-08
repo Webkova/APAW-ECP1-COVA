@@ -8,12 +8,12 @@ import org.junit.Test;
 
 import flyweightSingleton.*;
 import movie_original.Director;
+import movie_original.Movie;
 
 
 
 
 public class FlyweightTest {
-    Factory factory;
         
     @Test
     public void testIsSingleton() {
@@ -26,19 +26,31 @@ public class FlyweightTest {
     }
     
     
-//    @Test
-//    public void testGet() {
-//        Director director = new Director();
-//        director.setName("Denis Villeneuve");
-//        MovieConcrete movie = new MovieConcrete(8L);
-//        System.out.println(factory.getFactory().get(8L));
-////        assertEquals(8L, factory.get(8L).getId());
-//    }
-//
-//    @Test
-//    public void testSameObject() {
-//        assertSame(factory.get((long) 8), factory.get((long) 8));
-//    }
+    @Test
+    public void testGet() {
+        Movie movie = new Movie(8L);
+        Factory.getFactory().set(movie.getId(), movie);
+        
+        assertEquals(8L, Factory.getFactory().get(8L).getId());
+    }
+    
+    
+    @Test
+    public void testGetDirectorName() {
+        Director director = new Director();
+        director.setName("Denis Villeneuve");
+        Movie movie = new Movie(8L);
+        movie.setDirector(director);
+ 
+        Factory.getFactory().set(movie.getId(), movie);
+
+        assertEquals("Denis Villeneuve", Factory.getFactory().get(8L).getDirector().getName());
+    }
+
+    @Test
+    public void testSameObject() {
+        assertSame(Factory.getFactory().get(8L), Factory.getFactory().get(8L));
+    }
 
 
 

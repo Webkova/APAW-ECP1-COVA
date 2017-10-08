@@ -26,7 +26,7 @@ public class Factory {
     }
     
 
-    public void set(long id, Movie movie){
+    public void set(Long id, Movie movie){
         map.put(id, movie);
     }
 }
