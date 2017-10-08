@@ -1,4 +1,4 @@
-package Composite;
+package composite;
 
 import movie_original.Movie;
 

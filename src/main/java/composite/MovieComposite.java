@@ -1,20 +1,18 @@
-package Composite;
-
-import movie_original.Movie;
+package composite;
 
 public class MovieComposite extends MovieComponent {
     private java.util.List<MovieComponent> list;
-    private Movie movie;
+    private String name;
     
-    public MovieComposite(Movie movie) {
+    public MovieComposite(String name) {
+        this.name = name;
         this.list = new java.util.ArrayList<>();
-        this.movie = movie;
     }
 
-    
+
     @Override
     public String view() {
-        return this.movie.getTitle();
+        return "MovieTree[" + name + "]";
     }
 
     @Override
@@ -31,6 +29,9 @@ public class MovieComposite extends MovieComponent {
     public boolean isComposite() {
         return true;
     }
+    
+
+
 
 
 }
