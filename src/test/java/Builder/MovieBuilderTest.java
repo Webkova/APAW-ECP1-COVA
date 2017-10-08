@@ -16,9 +16,9 @@ public class MovieBuilderTest {
     public void testMovie() {
         
         Movie movie = new MovieBuilder().id(1).Genre(Genre.ACTION).title("Blade runner 2049").debut(2017)
-                .Director(new Director()).DirectorName("Denis Villeneuve").DirectorLevel(45)
+                .DirectorName("Denis Villeneuve").DirectorLevel(45)
                 .build();
-
+       
         assertEquals(1, movie.getId());
         assertEquals("Blade runner 2049",movie.getTitle());
         assertEquals(2017, movie.getDebut());

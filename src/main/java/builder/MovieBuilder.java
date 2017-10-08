@@ -7,6 +7,7 @@ import movie_original.Movie;
 public class MovieBuilder {
 
     private Movie movie;
+    private Director director;
    
     
     public MovieBuilder id(long id) {
@@ -24,12 +25,10 @@ public class MovieBuilder {
         return this;
     }
     
-    public MovieBuilder Director(Director dir){
-        this.movie.setDirector(dir);
-        return this;
-    }
-    
+  
     public MovieBuilder DirectorName(String directorName){
+        this.director = new Director();
+        this.movie.setDirector(director);
         this.movie.setDirectorName(directorName);
         return this;
     }
