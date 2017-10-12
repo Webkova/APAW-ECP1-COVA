@@ -2,9 +2,9 @@ package movie_original;
 
 public class Director {
     
-    public long id;
-    public String name;
-    public int level;
+    private long id;
+    private String name;
+    private int level;
     
     public String getName() {
         return name;
